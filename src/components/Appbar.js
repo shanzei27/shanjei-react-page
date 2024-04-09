@@ -14,14 +14,14 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { styled  } from '@mui/material/styles';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Home', 'Skills', 'Portfolio', 'Links'];
 
 const TitleText = styled(Typography)(({ theme }) => ({
     font: "normal normal 400",
     fontSize: "28px",
     fontFamily: "Press Start 2P",
-    color: "#353535",
-    mr: 4,
+    color: "#fff",
+    marginRight: '15px',
     textDecoration: 'none',
 }));
 
@@ -31,6 +31,7 @@ function Appbar() {
     <AppBar position="static" style={{background: 'linear-gradient( 86.3deg,  rgba(0,119,182,1) 3.6%, rgba(8,24,68,1) 87.6% )'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          <img src={process.env.PUBLIC_URL + 'logo.png'} width={75}/>
           <TitleText
             noWrap
             component="a"
@@ -38,10 +39,8 @@ function Appbar() {
           >
             Shanjei
           </TitleText>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                    </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+    
+          <Box sx={{ flexGrow: 1}}></Box>
           <Typography
             variant="h5"
             noWrap
@@ -60,7 +59,7 @@ function Appbar() {
           >
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}

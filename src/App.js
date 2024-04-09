@@ -2,11 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './pages/Home';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import Appbar from './components/Appbar';
+import Skills from './pages/Skills';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#82519E",
+      main: "#0077b6",
       contrastText: "#000" //button text white instead of black
     },
     secondary: {
@@ -18,7 +20,7 @@ const theme = createTheme({
   },
   typography: {
     h1: {
-      fontSize: 36,
+      fontSize: '52px',
       fontWeight: 500,
     },
     h5: {
@@ -46,7 +48,8 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <Home />
+        <Appbar />
+        <Skills />
       </ThemeProvider>
     </div>
   );
