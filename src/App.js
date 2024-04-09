@@ -49,7 +49,7 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <Appbar />
-        <Skills />
+        <Home />
       </ThemeProvider>
     </div>
   );

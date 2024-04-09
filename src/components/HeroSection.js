@@ -97,7 +97,8 @@ const HeroSection = () => {
             </Item>
         </Grid>
         <Grid item xs={4}>
-            <RightPanel>
+            <RightPanel x={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
+            <iframe src="https://shanjei.com/c3-games/maple_dash/" width="580" height="580" scrolling="no" noresize="noresize" />
             </RightPanel>
         </Grid>
         </StyledGrid>
