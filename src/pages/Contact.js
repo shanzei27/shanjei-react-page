@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import createTheme from '@mui/material/styles';
+import Zoom from '@mui/material/Zoom';
 import Stack from '@mui/joy/Stack';
 import EmailIcon from '@mui/icons-material/Email';
 
@@ -33,6 +34,12 @@ const LabelText = styled(Typography)(({ theme }) => ({
 }));
 
 const Contact = () => {
+  const [checked, setChecked] = React.useState(false);
+  
+  React.useEffect(() => {
+    setChecked(true);
+  },[]);
+
   return (
     <>
         <StyledGrid container spacing={2}>
@@ -41,9 +48,11 @@ const Contact = () => {
             </Grid>
             <Grid item xs={8}>
                 <Item>
-                <Box sx={{ display: 'flex', direction: 'row' }}>
+                <Zoom in={checked}>
+                <Box sx={{ display: 'flex', direction: 'row' }}>     
                 <EmailIcon sx={{color: "white"}} /><LabelText>Email: contact@shanjei.com</LabelText>
                 </Box>
+                </Zoom>
             </Item>
             </Grid>
         </StyledGrid>

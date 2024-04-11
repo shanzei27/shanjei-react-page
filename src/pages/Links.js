@@ -1,3 +1,4 @@
+import '../App.css';
 import React from 'react'
 import Stack from '@mui/joy/Stack';
 import LinearProgress from '@mui/material/LinearProgress';
@@ -6,6 +7,11 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import createTheme from '@mui/material/styles';
+import fb from '../assets/fb.svg';
+import x from '../assets/x.svg';
+import linkedin from '../assets/linkedin.svg';
+import github from '../assets/github.svg';
+import Grow from '@mui/material/Grow';
 
 const Item = styled(Box)(({ theme }) => ({
     ...theme.typography.body2,
@@ -31,6 +37,12 @@ const LabelText = styled(Typography)(({ theme }) => ({
 }));
 
 const Skills = () => {
+  const [checked, setChecked] = React.useState(false);
+  
+  React.useEffect(() => {
+    setChecked(true);
+  },[]);
+
   return (
     <>
     <StyledGrid container spacing={2}>
@@ -39,7 +51,23 @@ const Skills = () => {
     </Grid>
     <Grid item xs={8}>
         <Item>
-        
+        <LabelText>Feel free to reach out to me on my socials</LabelText>
+        <div class="wrap">
+        <Grow
+          in={checked}
+          style={{ transformOrigin: '0 0 0' }}
+          {...(checked ? { timeout: 1000 } : {})}
+          >
+          <Box sx={{display: 'flex', direction: 'row'}}>
+          
+          <a href="https://www.facebook.com/shanjeig" target="_blank"class="hover-fx"><img src={fb} alt="facebook" width='50%' color='white'/></a>
+          <a href="https://twitter.com/Shanjei_guna" target="_blank" class="hover-fx"><img src={x} alt="x" width='50%'/></a>
+          <a href="https://www.linkedin.com/in/shanjei/" target="_blank" class="hover-fx"><img src={linkedin} alt="linkedin" width='50%'/></a>
+          <a href="https://github.com/shanzei27" target="_blank" class="hover-fx"><img src={github} alt="github" width='50%'/></a>
+
+          </Box>
+          </Grow>
+        </div>
 
         </Item>
     </Grid>

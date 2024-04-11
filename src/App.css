@@ -32,8 +32,9 @@ body {
 }
 
 .hero-play-button {
-  background: linear-gradient(283deg, #1a1967, #107db8, #7aaac5);
+  background: linear-gradient(283deg, #1a1967, #a2fcee);
   background-size: 600% 600%;
+  opacity: 50%;
 
   -webkit-animation: animButton 5s ease infinite;
   -moz-animation: animButton 5s ease infinite;
@@ -54,4 +55,58 @@ body {
   0%{background-position:0% 47%}
   50%{background-position:100% 54%}
   100%{background-position:0% 47%}
+}
+
+.wrap {
+  text-align: center;
+  border-radius: 50px 20px;
+  margin-top: 15px;
+}
+
+.wrap a {
+  color: #fff;
+}
+
+.hover-fx {
+  font-size: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:  center;
+  cursor: pointer;
+  margin: 15px;
+  width: 80px;
+  height: 80px;
+  line-height: 84px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: 300ms;
+}
+
+.hover-fx:after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: '';
+  box-sizing: content-box;
+  box-shadow: 0 0 0 3px #fff;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 300ms;
+}
+
+.hover-fx:hover {
+  background-color: #0d5a83;
+  color: #00989A;
+}
+
+.hover-fx:hover:after {
+  opacity: 1;
+  transform: scale(1.15);
 }

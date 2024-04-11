@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import createTheme from '@mui/material/styles';
+import Zoom from '@mui/material/Zoom';
+import skillConfig from '../components/config/skills_config';
 
 const Item = styled(Box)(({ theme }) => ({
     ...theme.typography.body2,
@@ -32,6 +34,12 @@ const LabelText = styled(Typography)(({ theme }) => ({
 }));
 
 const Skills = () => {
+  const [checked, setChecked] = React.useState(false);
+  
+  React.useEffect(() => {
+    setChecked(true);
+  },[]);
+
   return (
     <>
     <StyledGrid container spacing={2}>
@@ -41,8 +49,12 @@ const Skills = () => {
     <Grid item xs={8}>
         <Item>
         <Stack spacing={2} sx={{ flex: 1 }}>
-        <LabelText>Unity Engine</LabelText>
-        <LinearProgress color="primary" variant="determinate" value={20} sx={{height:'6px'}}/>
+        { skillConfig.map((item) => (
+              <>
+              <LabelText>{item.name}</LabelText>
+              <Zoom in={checked}><LinearProgress color="primary" variant="determinate" value={item.value} sx={{height:'8px'}}/></Zoom>
+              </>         
+        ))}
         </Stack>
     </Item>
     </Grid>

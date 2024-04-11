@@ -15,6 +15,7 @@ import { NavLink } from 'react-router-dom';
 import IframeResizer from 'iframe-resizer-react'
 import "@fontsource/press-start-2p";
 import Contact from '../pages/Contact';
+import Fade from '@mui/material/Fade';
 import '../App.css';
 
 const Item = styled(Box)(({ theme }) => ({
@@ -93,6 +94,11 @@ const HeroSection = () => {
   const [index, setIndex] = useState(0);
   const [gameShown, setGameShown] = useState(false);
   const theme = useTheme
+  const [checked, setChecked] = useState(false);
+  
+  useEffect(() => {
+    setChecked(true);
+  },[]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -110,6 +116,7 @@ const HeroSection = () => {
     <>
         <StyledGrid container spacing={2}>
         <Grid item xs={6}>
+        <Fade in={checked}>
             <Item>
                 <NameTitle variant='h1'>Shanjei G</NameTitle>
                 <LeadText> I'm a 
@@ -129,15 +136,16 @@ const HeroSection = () => {
                       
                       repeat={Infinity} />
                   </span> </LeadText>
-                  <NavLink to="contact" style={{textDecoration:"none"}}>
+                  <NavLink to="/contact" style={{textDecoration:"none"}}>
                   <GetInTouchButton variant="contained" endIcon={<PlayCircleIcon />} sx={{ marginTop: "10px"}}>
                     Get in touch
                 </GetInTouchButton>
                 </NavLink>
             </Item>
-       
+            </Fade>
         </Grid>
         <Grid item xs={4}>
+          <Fade in={checked}>
             <RightPanel className='hero-right-panel' sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
               {!gameShown && 
               <PlayButton className='hero-play-button' onClick={() => setGameShown(!gameShown)}>
@@ -172,6 +180,7 @@ const HeroSection = () => {
               }
           
             </RightPanel>
+          </Fade>
         </Grid>
         </StyledGrid>
     </>
