@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import Appbar from './components/Appbar';
 import Skills from './pages/Skills';
+import "@fontsource/press-start-2p";
 
 const theme = createTheme({
   palette: {
@@ -20,6 +21,7 @@ const theme = createTheme({
   },
   typography: {
     h1: {
+      fontFamily:'Press Start 2P',
       fontSize: '52px',
       fontWeight: 500,
     },

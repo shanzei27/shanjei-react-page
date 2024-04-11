@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { styled  } from '@mui/material/styles';
 
-const pages = ['Home', 'Skills', 'Portfolio', 'Links'];
+const pages = ['Home', 'Skills', 'Works', 'Links'];
 
 const TitleText = styled(Typography)(({ theme }) => ({
     font: "normal normal 400",
@@ -29,16 +29,9 @@ function Appbar() {
 
   return (
     <AppBar position="static" style={{background: 'linear-gradient( 86.3deg,  rgba(0,119,182,1) 3.6%, rgba(8,24,68,1) 87.6% )'}}>
-      <Container maxWidth="xl">
+      <Container maxWidth="85%">
         <Toolbar disableGutters>
           <img src={process.env.PUBLIC_URL + 'logo.png'} width={75}/>
-          <TitleText
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-          >
-            Shanjei
-          </TitleText>
     
           <Box sx={{ flexGrow: 1}}></Box>
           <Typography

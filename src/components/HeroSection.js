@@ -11,6 +11,8 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { useTheme } from '@emotion/react';
 import Button from '@mui/material/Button';
+import IframeResizer from 'iframe-resizer-react'
+import "@fontsource/press-start-2p";
 
 const Item = styled(Box)(({ theme }) => ({
     ...theme.typography.body2,
@@ -47,7 +49,6 @@ const LeadText = styled(Typography)(({ theme }) => ({
 }));
 
 const NameTitle = styled(Typography)(({ theme }) => ({
-  fontFamily: "Roboto",
   color: "#fff",
   mr: 4,
   textDecoration: 'none',
@@ -61,21 +62,25 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
     alignItems: 'center',
     justifyContent: 'center'
   }));
-  
+
+const GetInTouchButton = styled(Button)(({ theme }) => ({
+  textAlign: 'center',
+  color: "#fff",
+  zIndex: 50,
+  })); 
+
 const PlayButton = styled(IconButton)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: 'center',
   position: "relative",
-  color: "white",
+  color: "#0077b6",
 }));
 
 const CloseButton = styled(IconButton)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: 'center',
-  position: "absolute",
+  zIndex: 100,
   color: "white",
-  top: 85,
-  right: 120
 }));
 
 const HeroSection = () => {
@@ -119,9 +124,9 @@ const HeroSection = () => {
                       
                       repeat={Infinity} />
                   </span> </LeadText>
-                  <Button variant="contained" endIcon={<PlayCircleIcon />} sx={{ marginTop: "10px"}}>
+                  <GetInTouchButton variant="contained" endIcon={<PlayCircleIcon />} sx={{ marginTop: "10px"}}>
                     Get in touch
-                </Button>
+                </GetInTouchButton>
             </Item>
        
         </Grid>
@@ -132,7 +137,7 @@ const HeroSection = () => {
               <PlayCircleIcon sx={{
                  fontSize: 96,
                  "&:hover": {
-                  color: "grey",
+                  color: "white",
                 }
                  }} />
               
@@ -142,12 +147,17 @@ const HeroSection = () => {
               <Box sx={{width: "100%", 
               height: "100%",
               display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
+              alignItems: 'flex-start',
               justifyContent: 'center'}}
               >
-              <iframe name="gameIframe"  src="https://shanjei.com/c3-games/maple_dash/" width="400" height="460" scrolling="no" noresize="noresize" />
-              <CloseButton onClick={() => setGameShown(!gameShown)}>
+               <IframeResizer
+                  heightCalculationMethod="lowestElement"
+                  inPageLinks
+                  log
+                  src="https://shanjei.com/c3-games/maple_dash/"
+                  style={{ width: '1px', minWidth: '95%', minHeight: '100%'}}
+                />
+              <CloseButton onClick={() => setGameShown(!gameShown)} sx={{backgroundColor: '#0077b6'}}>
               <CancelIcon />
               </CloseButton>
               </Box>
