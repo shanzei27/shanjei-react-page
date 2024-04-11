@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { TypeAnimation } from 'react-type-animation';
 import CardMedia from '@mui/material/CardMedia';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
+import { useTheme } from '@emotion/react';
+import Button from '@mui/material/Button';
 
 const Item = styled(Box)(({ theme }) => ({
     ...theme.typography.body2,
@@ -20,14 +25,17 @@ const Item = styled(Box)(({ theme }) => ({
   }));
 
   const RightPanel = styled(Paper)(({ theme }) => ({
-    background: 'linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );',
+    background: 'linear-gradient( -111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );',
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: 'left',
     height: "80vh",
     alignItems: 'center',
     display: 'flex',
-    boxShadow: '10px 10px 5px 5px rgba(0,119,182,1)'
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center'
   }));
 
 const LeadText = styled(Typography)(({ theme }) => ({
@@ -54,10 +62,27 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
     justifyContent: 'center'
   }));
   
-  
+const PlayButton = styled(IconButton)(({ theme }) => ({
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  position: "relative",
+  color: "white",
+}));
+
+const CloseButton = styled(IconButton)(({ theme }) => ({
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  position: "absolute",
+  color: "white",
+  top: 85,
+  right: 120
+}));
+
 const HeroSection = () => {
   const texts = ["game developer", "web developer", "character animator"];
   const [index, setIndex] = useState(0);
+  const [gameShown, setGameShown] = useState(false);
+  const theme = useTheme
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -77,7 +102,7 @@ const HeroSection = () => {
         <Grid item xs={6}>
             <Item>
                 <NameTitle variant='h1'>Shanjei G</NameTitle>
-                <LeadText>Professional 
+                <LeadText> I'm a 
                   <span id="text" style={{fontWeight:800}}>
                   <TypeAnimation
                       sequence={[
@@ -94,11 +119,40 @@ const HeroSection = () => {
                       
                       repeat={Infinity} />
                   </span> </LeadText>
+                  <Button variant="contained" endIcon={<PlayCircleIcon />} sx={{ marginTop: "10px"}}>
+                    Get in touch
+                </Button>
             </Item>
+       
         </Grid>
         <Grid item xs={4}>
-            <RightPanel x={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
-            <iframe src="https://shanjei.com/c3-games/maple_dash/" width="580" height="580" scrolling="no" noresize="noresize" />
+            <RightPanel x={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
+              {!gameShown && 
+              <PlayButton onClick={() => setGameShown(!gameShown)}>
+              <PlayCircleIcon sx={{
+                 fontSize: 96,
+                 "&:hover": {
+                  color: "grey",
+                }
+                 }} />
+              
+              </PlayButton>
+              }
+              {gameShown &&
+              <Box sx={{width: "100%", 
+              height: "100%",
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center'}}
+              >
+              <iframe name="gameIframe"  src="https://shanjei.com/c3-games/maple_dash/" width="400" height="460" scrolling="no" noresize="noresize" />
+              <CloseButton onClick={() => setGameShown(!gameShown)}>
+              <CancelIcon />
+              </CloseButton>
+              </Box>
+              }
+          
             </RightPanel>
         </Grid>
         </StyledGrid>
