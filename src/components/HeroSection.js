@@ -11,8 +11,11 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { useTheme } from '@emotion/react';
 import Button from '@mui/material/Button';
+import { NavLink } from 'react-router-dom';
 import IframeResizer from 'iframe-resizer-react'
 import "@fontsource/press-start-2p";
+import Contact from '../pages/Contact';
+import '../App.css';
 
 const Item = styled(Box)(({ theme }) => ({
     ...theme.typography.body2,
@@ -50,6 +53,8 @@ const LeadText = styled(Typography)(({ theme }) => ({
 
 const NameTitle = styled(Typography)(({ theme }) => ({
   color: "#fff",
+  fontFamily: 'Oxygen',
+  fontWeight: 600,
   mr: 4,
   textDecoration: 'none',
 }));
@@ -124,20 +129,23 @@ const HeroSection = () => {
                       
                       repeat={Infinity} />
                   </span> </LeadText>
+                  <NavLink to="contact" style={{textDecoration:"none"}}>
                   <GetInTouchButton variant="contained" endIcon={<PlayCircleIcon />} sx={{ marginTop: "10px"}}>
                     Get in touch
                 </GetInTouchButton>
+                </NavLink>
             </Item>
        
         </Grid>
         <Grid item xs={4}>
-            <RightPanel x={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
+            <RightPanel className='hero-right-panel' sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
               {!gameShown && 
-              <PlayButton onClick={() => setGameShown(!gameShown)}>
+              <PlayButton className='hero-play-button' onClick={() => setGameShown(!gameShown)}>
               <PlayCircleIcon sx={{
                  fontSize: 96,
                  "&:hover": {
                   color: "white",
+                  zIndex: 50
                 }
                  }} />
               

@@ -1,10 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './pages/Home';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import Appbar from './components/Appbar';
 import Skills from './pages/Skills';
+import Works from './pages/Works';
+import Links from './pages/Links';
+import Contact from './pages/Contact';
 import "@fontsource/press-start-2p";
+import Footer from './components/Footer';
 
 const theme = createTheme({
   palette: {
@@ -25,9 +29,18 @@ const theme = createTheme({
       fontSize: '52px',
       fontWeight: 500,
     },
+    h2: {
+      fontFamily:'Roboto',
+      color:'white',
+      fontSize: '36px',
+      fontWeight: 500,
+      textAlign: 'left'
+    },
     h5: {
       padding: 4,
-      fontSize: 16,
+      fontSize: 22,
+      color:'white',
+      textAlign: 'left',
       fontWeight: 500,
     },
     subtitle1: {
@@ -48,12 +61,23 @@ const theme = createTheme({
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
+    <div className='App'>
       <ThemeProvider theme={theme}>
-        <Appbar />
-        <Home />
+      <Appbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="home" element={<Home />} />
+          <Route path="skills" element={<Skills />} />
+          <Route path="works" element={<Works />} />
+          <Route path="links" element={<Links />} />
+          <Route path="contact" element={<Contact />} />
+        </Routes>
+      </main>
       </ThemeProvider>
     </div>
+    </BrowserRouter>
   );
 }
 

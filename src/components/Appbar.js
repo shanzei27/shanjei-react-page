@@ -1,5 +1,6 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
+import { Link, NavLink } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -14,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { styled  } from '@mui/material/styles';
 
-const pages = ['Home', 'Skills', 'Works', 'Links'];
+const pages = ['Home', 'Skills', 'Works', 'Links', 'Contact'];
 
 const TitleText = styled(Typography)(({ theme }) => ({
     font: "normal normal 400",
@@ -54,12 +55,14 @@ function Appbar() {
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
+              <NavLink to={page} style={{textDecoration:"none"}}>
               <Button
                 key={page}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
               </Button>
+              </NavLink>
     ))}
     </Box>
 

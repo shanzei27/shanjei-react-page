@@ -9,7 +9,6 @@ import createTheme from '@mui/material/styles';
 
 const Item = styled(Box)(({ theme }) => ({
     ...theme.typography.body2,
-    padding: theme.spacing(1),
     textAlign: 'left',
     color: theme.palette.text.secondary,
   }));
@@ -36,15 +35,13 @@ const Skills = () => {
     <>
     <StyledGrid container spacing={2}>
     <Grid item xs={8}>
-      <Typography variant='h2'>Skills</Typography>
+      <Typography variant='h2'>Links</Typography>
     </Grid>
     <Grid item xs={8}>
         <Item>
-        <Stack spacing={2} sx={{ flex: 1 }}>
-        <LabelText>Unity Engine</LabelText>
-        <LinearProgress color="primary" variant="determinate" value={20} sx={{height:'6px'}}/>
-        </Stack>
-    </Item>
+        
+
+        </Item>
     </Grid>
     </StyledGrid>
     </>

@@ -3,5 +3,55 @@
 }
 
 body {
-  background-image: radial-gradient( circle 815px at 23.4% -18%,  rgb(40, 69, 151) 0.2%, rgb(2, 1, 15) 100.2% );
+  background-image: linear-gradient(90deg, rgba(2,1,15,1) 0%, rgba(40,69,151,1) 100%);
+}
+
+.hero-right-panel {
+  background: linear-gradient(283deg, #070709, #1b1871);
+  background-size: 400% 400%;
+
+  -webkit-animation: anim 9s ease infinite;
+  -moz-animation: anim 9s ease infinite;
+  animation: anim 9s ease infinite;
+}
+
+@-webkit-keyframes anim {
+  0%{background-position:0% 47%}
+  50%{background-position:100% 54%}
+  100%{background-position:0% 47%}
+}
+@-moz-keyframes anim {
+  0%{background-position:0% 47%}
+  50%{background-position:100% 54%}
+  100%{background-position:0% 47%}
+}
+@keyframes anim {
+  0%{background-position:0% 47%}
+  50%{background-position:100% 54%}
+  100%{background-position:0% 47%}
+}
+
+.hero-play-button {
+  background: linear-gradient(283deg, #1a1967, #107db8, #7aaac5);
+  background-size: 600% 600%;
+
+  -webkit-animation: animButton 5s ease infinite;
+  -moz-animation: animButton 5s ease infinite;
+  animation: animButton 5s ease infinite;
+}
+
+@-webkit-keyframes animButton {
+  0%{background-position:0% 47%}
+  50%{background-position:100% 54%}
+  100%{background-position:0% 47%}
+}
+@-moz-keyframes animButton {
+  0%{background-position:0% 47%}
+  50%{background-position:100% 54%}
+  100%{background-position:0% 47%}
+}
+@keyframes animButton {
+  0%{background-position:0% 47%}
+  50%{background-position:100% 54%}
+  100%{background-position:0% 47%}
 }
