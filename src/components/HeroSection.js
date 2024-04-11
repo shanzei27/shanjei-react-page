@@ -31,7 +31,6 @@ const Item = styled(Box)(({ theme }) => ({
   }));
 
   const RightPanel = styled(Paper)(({ theme }) => ({
-    background: 'linear-gradient( -111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );',
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: 'left',
@@ -73,6 +72,12 @@ const GetInTouchButton = styled(Button)(({ theme }) => ({
   textAlign: 'center',
   color: "#fff",
   zIndex: 50,
+  backgroundColor: '#0093E9',
+  backgroundImage: 'linear-gradient(90deg, #0093E9 0%, #80D0C7 100%)',
+  
+  [theme.breakpoints.between('sm', 'md')]: {
+    //backgroundColor: 'red',
+  },
   })); 
 
 const PlayButton = styled(IconButton)(({ theme }) => ({
@@ -115,7 +120,7 @@ const HeroSection = () => {
   return (
     <>
         <StyledGrid container spacing={2}>
-        <Grid item xs={6}>
+        <Grid item xs={10} sm={6}>
         <Fade in={checked}>
             <Item>
                 <NameTitle variant='h1'>Shanjei G</NameTitle>
@@ -144,11 +149,11 @@ const HeroSection = () => {
             </Item>
             </Fade>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={0} sm={4}>
           <Fade in={checked}>
             <RightPanel className='hero-right-panel' sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
               {!gameShown && 
-              <PlayButton className='hero-play-button' onClick={() => setGameShown(!gameShown)}>
+              <PlayButton onClick={() => setGameShown(!gameShown)}>
               <PlayCircleIcon sx={{
                  fontSize: 96,
                  "&:hover": {

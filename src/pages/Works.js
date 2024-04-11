@@ -35,18 +35,17 @@ const Skills = () => {
   const [checked, setChecked] = React.useState(false);
   
   const handleIFrameLoad = () => {
-    console.log("iframe loaded");
     setChecked(true);
   }
 
   return (
     <>
     <StyledGrid container spacing={2}>
-    <Grid item xs={8}>
+    <Grid item xs={10} sm={8}>
       <Typography variant='h2'>Works</Typography>
       <Typography variant='h5'>Portfolio</Typography>
     </Grid>
-    <Grid item xs={8}>
+    <Grid item xs={10} sm={8}>
         <Item>
         <div style={{padding:"56.25% 0 0 0",position:"relative"}}>
           <Grow  in={checked}

@@ -43,17 +43,17 @@ const Skills = () => {
   return (
     <>
     <StyledGrid container spacing={2}>
-    <Grid item xs={8}>
+    <Grid item xs={10} sm={8}>
       <Typography variant='h2'>Skills</Typography>
     </Grid>
-    <Grid item xs={8}>
+    <Grid item xs={10} sm={8}>
         <Item>
         <Stack spacing={2} sx={{ flex: 1 }}>
         { skillConfig.map((item) => (
-              <>
+              <div key={item.name}>
               <LabelText>{item.name}</LabelText>
               <Zoom in={checked}><LinearProgress color="primary" variant="determinate" value={item.value} sx={{height:'8px'}}/></Zoom>
-              </>         
+              </div>         
         ))}
         </Stack>
     </Item>

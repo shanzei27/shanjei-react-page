@@ -46,10 +46,10 @@ const Skills = () => {
   return (
     <>
     <StyledGrid container spacing={2}>
-    <Grid item xs={8}>
+    <Grid item xs={10} sm={8}>
       <Typography variant='h2'>Links</Typography>
     </Grid>
-    <Grid item xs={8}>
+    <Grid item xs={10} sm={8}>
         <Item>
         <LabelText>Feel free to reach out to me on my socials</LabelText>
         <div class="wrap">

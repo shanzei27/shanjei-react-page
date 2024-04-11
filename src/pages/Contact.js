@@ -43,10 +43,10 @@ const Contact = () => {
   return (
     <>
         <StyledGrid container spacing={2}>
-            <Grid item xs={8}>
+            <Grid item xs={10} sm={8}>
             <Typography variant='h2'>Contact</Typography>
             </Grid>
-            <Grid item xs={8}>
+            <Grid item xs={10} sm={8}>
                 <Item>
                 <Zoom in={checked}>
                 <Box sx={{ display: 'flex', direction: 'row' }}>     
