@@ -65,7 +65,8 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    height: '90vh'
   }));
 
 const GetInTouchButton = styled(Button)(({ theme }) => ({
@@ -88,10 +89,13 @@ const PlayButton = styled(IconButton)(({ theme }) => ({
 }));
 
 const CloseButton = styled(IconButton)(({ theme }) => ({
+  position: 'absolute',
   padding: theme.spacing(1),
   textAlign: 'center',
   zIndex: 100,
   color: "white",
+  right: -13,
+  top: -13 
 }));
 
 const HeroSection = () => {
@@ -120,7 +124,7 @@ const HeroSection = () => {
   return (
     <>
         <StyledGrid container spacing={2}>
-        <Grid item xs={10} sm={6}>
+        <Grid  item xs={10} sm={6}>
         <Fade in={checked}>
             <Item>
                 <NameTitle variant='h1'>Shanjei G</NameTitle>
@@ -166,6 +170,7 @@ const HeroSection = () => {
               }
               {gameShown &&
               <Box sx={{width: "100%", 
+              position: 'relative',
               height: "100%",
               display: 'flex',
               alignItems: 'flex-start',

@@ -12,6 +12,7 @@ import x from '../assets/x.svg';
 import linkedin from '../assets/linkedin.svg';
 import github from '../assets/github.svg';
 import Grow from '@mui/material/Grow';
+import Divider from '@mui/material/Divider';
 
 const Item = styled(Box)(({ theme }) => ({
     ...theme.typography.body2,
@@ -25,7 +26,7 @@ const Item = styled(Box)(({ theme }) => ({
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
     }));
     
 const LabelText = styled(Typography)(({ theme }) => ({
@@ -34,9 +35,12 @@ const LabelText = styled(Typography)(({ theme }) => ({
     color: "#fff",
     mr: 4,
     textDecoration: 'none',
+    [theme.breakpoints.between('xs', 'sm')]: {
+      textAlign: 'center'
+    },
 }));
 
-const Skills = () => {
+const Links = () => {
   const [checked, setChecked] = React.useState(false);
   
   React.useEffect(() => {
@@ -46,12 +50,11 @@ const Skills = () => {
   return (
     <>
     <StyledGrid container spacing={2}>
-    <Grid item xs={10} sm={8}>
-      <Typography variant='h2'>Links</Typography>
-    </Grid>
-    <Grid item xs={10} sm={8}>
+      
+    <Grid item xs={10} sm={6}>
+        <Divider sx={{ display: {xs: 'block', sm: 'none'}, bgcolor: "secondary.light", marginBottom: '15px' }}  />
         <Item>
-        <LabelText>Feel free to reach out to me on my socials</LabelText>
+        
         <div class="wrap">
         <Grow
           in={checked}
@@ -71,9 +74,12 @@ const Skills = () => {
 
         </Item>
     </Grid>
+    <Grid item xs={0} sm={4}>
+
+    </Grid>
     </StyledGrid>
     </>
   )
 }
 
-export default Skills
+export default Links

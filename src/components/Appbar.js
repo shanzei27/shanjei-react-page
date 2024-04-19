@@ -15,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { styled  } from '@mui/material/styles';
 
-const pages = ['Home', 'Skills', 'Works', 'Links', 'Contact'];
+const pages = ['Home', 'Skills', 'Works', 'Contact'];
 
 const TitleText = styled(Typography)(({ theme }) => ({
     font: "normal normal 400",
