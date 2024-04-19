@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import Appbar from './components/Appbar';
 import Skills from './pages/Skills';
-import Works from './pages/Works';
+import Projects from './pages/Projects';
 import Links from './pages/Links';
 import Contact from './pages/Contact';
 import "@fontsource/press-start-2p";
@@ -39,7 +39,6 @@ const theme = createTheme({
     h5: {
       padding: 4,
       fontSize: 22,
-      color:'white',
       textAlign: 'left',
       fontWeight: 500,
     },
@@ -70,7 +69,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="skills" element={<Skills />} />
-          <Route path="works" element={<Works />} />
+          <Route path="projects" element={<Projects />} />
           <Route path="contact" element={<Contact />} />
         </Routes>
       </main>
