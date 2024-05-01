@@ -1,2 +1,2 @@
 # Personal website 
-Personal website built with React framwork
+Personal website built with React library
