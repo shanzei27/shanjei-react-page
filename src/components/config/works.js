@@ -7,7 +7,8 @@ const worksConfig = [
         "image": "shanlags_thumb.png",
         "wip": false,
         "linked": true,
-        "link": "https://www.shanlags.com"
+        "link": "https://www.shanlags.com",
+        "github_link": ""
     },
     {
         "title": "Maple",
@@ -16,7 +17,9 @@ const worksConfig = [
         "description": "A discord anime broadcast notifier bot. Trying things using REST API and Cron jobs",
         "image": "maple_bot_thumb.jpg",
         "wip": true,
-        "linked": false
+        "linked": false,
+        "github_link": "https://github.com/shanzei27/maple-discord-bot"
+
     },
     {
         "title": "Aniview",
@@ -25,7 +28,8 @@ const worksConfig = [
         "description": "A MyAnimeList.net companion which fetches and shows your anime stats and recommendations. Currently a casual project.",
         "image": "aniview_thumb.png",
         "wip": true,
-        "linked": false
+        "linked": false,
+        "github_link": "https://github.com/shanzei27/aniview-pro"
     },
     {
         "title": "Tesseract",
@@ -34,7 +38,8 @@ const worksConfig = [
         "description": "A top down 2D autobattler game with bullet hell touches. Attempting procedural level generation. Currently on hold.",
         "image": "project_placeholder.jpg",
         "wip": true,
-        "linked": false
+        "linked": false,
+        "github_link": ""
     },
     {
         "title": "Starsurge.in",
@@ -43,7 +48,8 @@ const worksConfig = [
         "description": "A simple business website (no longer online)",
         "image": "project_placeholder.jpg",
         "wip": false,
-        "linked": false
+        "linked": false,
+        "github_link": "https://github.com/shanzei27/starsurge-in-homepage"
     },
 ]
 
