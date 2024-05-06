@@ -8,7 +8,7 @@ import Collapse from "@mui/material/Collapse";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import IconButton from "@mui/material/IconButton";
 import WorksCard from "../components/WorksCard";
-import worksConfig from "../components/config/works";
+import worksConfig from "../components/config/works_config.js";
 import { Helmet } from "react-helmet-async";
 
 const Item = styled(Box)(({ theme }) => ({
@@ -77,9 +77,9 @@ const Projects = () => {
         ></meta>
         <link rel="canonical" href="/projects" />
       </Helmet>
-      <StyledGrid container spacing={2}>
+      <StyledGrid container spacing={3}>
         <Grid item xs={10} sm={9}>
-          <Typography variant="h2" sx={{ marginBottom: "5px" }}>
+          <Typography variant="h2" sx={{ marginBottom: "15px" }}>
             Projects
           </Typography>
           <Grid

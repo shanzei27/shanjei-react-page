@@ -70,7 +70,7 @@ export default function WorksCard({ data }) {
       <Box sx={{ position: "absolute", bottom: 0 }}>
         <CardActions>
           <Link target="_blank" href={data.link} rel="noreferrer">
-            <Button size="small" disabled={data.wip || !data.linked}>
+            <Button size="small" disabled={!data.linked}>
               Visit Site
             </Button>
           </Link>

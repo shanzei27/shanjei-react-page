@@ -28,7 +28,8 @@ const worksConfig = [
         "description": "A MyAnimeList.net companion which fetches and shows your anime stats and recommendations. Currently a casual project.",
         "image": "aniview_thumb.png",
         "wip": true,
-        "linked": false,
+        "linked": true,
+        "link": "https://aniview.shanjei.com",
         "github_link": "https://github.com/shanzei27/aniview-pro"
     },
     {
