@@ -5,8 +5,9 @@ import React from "react";
 //id = id based on index,
 //total = total number of elements to render
 //element = current element data
-
-const Element = ({ id, total, element, userStyle }) => {
+//userStyle = css overide from component init (user provided)
+//themeBaseColor = base hex color code for this element
+const Element = ({ id, total, element, userStyle, themeBaseColor }) => {
   const direction = id % 2 === 0 ? "up" : "down"; //direction = element pointing direction
   const elementBaseStyle = {
     // applying corner borders if element is on edges
@@ -14,6 +15,7 @@ const Element = ({ id, total, element, userStyle }) => {
     borderBottomLeftRadius: id === 0 ? "20px" : "0px",
     borderTopRightRadius: id === total - 1 ? "20px" : "0px",
     borderBottomRightRadius: id === total - 1 ? "20px" : "0px",
+    backgroundColor: themeBaseColor,
   };
   return (
     <div
@@ -26,6 +28,7 @@ const Element = ({ id, total, element, userStyle }) => {
       <div
         class="element-line"
         style={{
+          backgroundColor: themeBaseColor,
           top: id % 2 === 0 ? "-115px" : "auto",
           bottom: id % 2 !== 0 ? "-115px" : "auto",
         }}
@@ -33,6 +36,8 @@ const Element = ({ id, total, element, userStyle }) => {
         <div
           className="element-circle"
           style={{
+            borderColor: themeBaseColor,
+            color: themeBaseColor,
             top: id % 2 !== 0 ? "65px" : "auto",
           }}
         >

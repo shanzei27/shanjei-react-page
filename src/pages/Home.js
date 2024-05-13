@@ -39,12 +39,25 @@ const Home = () => {
         <link rel="canonical" href="/home" />
       </Helmet>
       <StyledGrid>
-        <Grid item xs={12} sx={{ display: "flex", bgcolor: 'grey', height: '100%', alignItems: 'flex-start', justifyContent: "center" }}>
+        <Grid
+          item
+          xs={12}
+          sx={{
+            display: "flex",
+            bgcolor: "grey",
+            height: "100%",
+            alignItems: "flex-start",
+            justifyContent: "center",
+          }}
+        >
           {/* currently custom style targets individual elements inside the timeline, not the entire timeline */}
           <Timeline
+            variant="standard"      //standard (colored blocks), gradient
             elements={elements}
             elementWidth={200}
             customStyle={elementStyle}
+            blockColors = {[]}
+          //  theme={{ primary: "#3f51b5", secondary: "#c50079" }}
           />
         </Grid>
       </StyledGrid>

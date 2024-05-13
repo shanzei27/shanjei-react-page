@@ -1,10 +1,37 @@
 import "./global.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Element from "./components/Element";
-import { height } from "@fortawesome/free-brands-svg-icons/fa42Group";
+import defaults from "./config/defaults";
 
-const Timeline = ({ elements, elementWidth, customStyle }) => {
+const Timeline = ({ elements, elementWidth, customStyle, blockColors }) => {
   const elLength = elements.length;
+  const currentBlockColors =
+    blockColors !== undefined && blockColors.length != 0
+      ? blockColors
+      : defaults.defaultBlockColors;
+
+  const  [blockColorArr, setBlockColorArr] = useState([]);
+
+  useEffect(() => {
+    init();
+  }, []);
+
+  const init = () => {
+    //generate block colors for each element
+    let colorArr = [];
+    let blockColorIndex = 0;
+    console.log("called");
+    while (colorArr.length < elLength) {
+      if (blockColorIndex < currentBlockColors.length) {
+        blockColorIndex += 1;
+      } else {
+        blockColorIndex = 0;
+      }
+      colorArr.push(currentBlockColors[blockColorIndex]);
+    }
+    setBlockColorArr(colorArr);
+    console.log(blockColorArr);
+  };
 
   return (
     <div
@@ -14,9 +41,14 @@ const Timeline = ({ elements, elementWidth, customStyle }) => {
       }}
     >
       <div className="innerContainer">
-      
-      {elements.map((el, index) => (
-          <Element id={index} total={elLength} element={el} userStyle={customStyle}/>
+        {elements.map((el, index) => (
+          <Element
+            id={index}
+            total={elLength}
+            element={el}
+            userStyle={customStyle}
+            themeBaseColor={blockColorArr[index]}
+          />
         ))}
       </div>
     </div>
