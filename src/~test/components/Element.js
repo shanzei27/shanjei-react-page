@@ -17,6 +17,7 @@ const Element = ({ id, total, element, userStyle, themeBaseColor }) => {
     borderBottomRightRadius: id === total - 1 ? "20px" : "0px",
     backgroundColor: themeBaseColor,
   };
+  console.log(themeBaseColor);
   return (
     <div
       className="element"
@@ -29,8 +30,8 @@ const Element = ({ id, total, element, userStyle, themeBaseColor }) => {
         class="triangle"
         style={{
           borderBottomColor: themeBaseColor,
-          top: id % 2 === 0 ? "35px" : "auto",
-          bottom: id % 2 !== 0 ? "35px" : "auto",
+          top: id % 2 === 0 ? "20px" : "auto",
+          bottom: id % 2 !== 0 ? "20px" : "auto",
           transform: id % 2 === 0 ? "rotate(180deg)" : "",
         }}
       ></div>
@@ -63,7 +64,7 @@ const Element = ({ id, total, element, userStyle, themeBaseColor }) => {
         <h2 className="element-heading">{element.name}</h2>
         <p className="element-desc"> {element.desc}</p>
       </div>
-      {element.name}
+
     </div>
   );
 };

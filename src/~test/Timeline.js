@@ -21,7 +21,7 @@ const Timeline = ({ elements, elementWidth, customStyle, blockColors }) => {
     let colorArr = [];
     let blockColorIndex = 0;
     while (colorArr.length < elLength) {
-      if (blockColorIndex < currentBlockColors.length) {
+      if (blockColorIndex < currentBlockColors.length-1) {
         blockColorIndex += 1;
       } else {
         blockColorIndex = 0;

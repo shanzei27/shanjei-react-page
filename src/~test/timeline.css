@@ -8,10 +8,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-x:auto;
+  overflow-y: hidden;
 }
 
 .innerContainer {
-  height: 35px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
