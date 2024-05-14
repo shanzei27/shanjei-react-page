@@ -23,7 +23,23 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
 }));
 
 //pkg testing
-const elements = [{ name: "test 1" }, { name: "test 2" }, { name: "test 3" }];
+const elements = [
+  {
+    name: "test 1",
+    circle_text: "2019",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum justo eu sagittis venenatis. Proin id leo nisl. Ut vitae libero ligula. Maecenas molestie vestibulum purus et porttitor. Ut ultricies purus turpis, non venenatis tellus convallis sed. Sed commodo nibh pellentesque neque sodales scelerisque. Nunc consectetur consequat erat in semper. Cras lacinia auctor nunc. Nullam fringilla non lectus vel tristique. Aliquam erat volutpat.",
+  },
+  {
+    name: "test 2",
+    circle_text: "2020",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum justo eu sagittis venenatis. Proin id leo nisl. Ut vitae libero ligula. Maecenas molestie vestibulum purus et porttitor. Ut ultricies purus turpis, non venenatis tellus convallis sed. Sed commodo nibh pellentesque neque sodales scelerisque. Nunc consectetur consequat erat in semper. Cras lacinia auctor nunc. Nullam fringilla non lectus vel tristique. Aliquam erat volutpat.",
+  },
+  {
+    name: "test 3",
+    circle_text: "2021",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum justo eu sagittis venenatis. Proin id leo nisl. Ut vitae libero ligula. Maecenas molestie vestibulum purus et porttitor. Ut ultricies purus turpis, non venenatis tellus convallis sed. Sed commodo nibh pellentesque neque sodales scelerisque. Nunc consectetur consequat erat in semper. Cras lacinia auctor nunc. Nullam fringilla non lectus vel tristique. Aliquam erat volutpat.",
+  },
+];
 const elementStyle = {
   color: "pink",
 };
@@ -52,12 +68,12 @@ const Home = () => {
         >
           {/* currently custom style targets individual elements inside the timeline, not the entire timeline */}
           <Timeline
-            variant="standard"      //standard (colored blocks), gradient
+            variant="standard" //standard (colored blocks), gradient
             elements={elements}
             elementWidth={200}
             customStyle={elementStyle}
-            blockColors = {[]}
-          //  theme={{ primary: "#3f51b5", secondary: "#c50079" }}
+            blockColors={[]}
+            //  theme={{ primary: "#3f51b5", secondary: "#c50079" }}
           />
         </Grid>
       </StyledGrid>

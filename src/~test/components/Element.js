@@ -1,5 +1,5 @@
 import { height } from "@fortawesome/free-brands-svg-icons/fa42Group";
-import "../global.css";
+import "../timeline.css";
 import React from "react";
 
 //id = id based on index,
@@ -26,6 +26,15 @@ const Element = ({ id, total, element, userStyle, themeBaseColor }) => {
       }}
     >
       <div
+        class="triangle"
+        style={{
+          borderBottomColor: themeBaseColor,
+          top: id % 2 === 0 ? "35px" : "auto",
+          bottom: id % 2 !== 0 ? "35px" : "auto",
+          transform: id % 2 === 0 ? "rotate(180deg)" : "",
+        }}
+      ></div>
+      <div
         class="element-line"
         style={{
           backgroundColor: themeBaseColor,
@@ -38,11 +47,21 @@ const Element = ({ id, total, element, userStyle, themeBaseColor }) => {
           style={{
             borderColor: themeBaseColor,
             color: themeBaseColor,
-            top: id % 2 !== 0 ? "65px" : "auto",
+            top: id % 2 !== 0 ? "58px" : "auto",
           }}
         >
-          {element.name}
+          {element.circle_text}
         </div>
+      </div>
+      <div
+        className="element-desc-container"
+        style={{
+          top: id % 2 !== 0 ? "-105px" : "auto",
+          bottom: id % 2 === 0 ? "-105px" : "auto",
+        }}
+      >
+        <h2 className="element-heading">{element.name}</h2>
+        <p className="element-desc"> {element.desc}</p>
       </div>
       {element.name}
     </div>

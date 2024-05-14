@@ -1,4 +1,4 @@
-import "./global.css";
+import "./timeline.css";
 import React, { useEffect, useState } from "react";
 import Element from "./components/Element";
 import defaults from "./config/defaults";
@@ -20,7 +20,6 @@ const Timeline = ({ elements, elementWidth, customStyle, blockColors }) => {
     //generate block colors for each element
     let colorArr = [];
     let blockColorIndex = 0;
-    console.log("called");
     while (colorArr.length < elLength) {
       if (blockColorIndex < currentBlockColors.length) {
         blockColorIndex += 1;
@@ -30,7 +29,6 @@ const Timeline = ({ elements, elementWidth, customStyle, blockColors }) => {
       colorArr.push(currentBlockColors[blockColorIndex]);
     }
     setBlockColorArr(colorArr);
-    console.log(blockColorArr);
   };
 
   return (
