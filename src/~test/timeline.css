@@ -18,13 +18,13 @@
 
 .innerContainer {
   height: 20px;
-  display: flex;
-  align-items: center;
+
   width: 100%;
 }
 
 /* Element styles */
 .element {
+  /* animation: 1s ease-in-out 0s 1 slideInFromLeft; */
   position: relative;
   min-width: 240px;
   width: 240px;
@@ -36,6 +36,7 @@
   background-color: purple;
   padding: 10x 10px;
   flex-shrink: 0;
+
   /* right: -200px; */
 }
 

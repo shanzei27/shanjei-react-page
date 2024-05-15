@@ -17,7 +17,7 @@ const ElementStandard = ({ id, total, element, userStyle, themeBaseColor }) => {
     borderBottomRightRadius: id === total - 1 ? "20px" : "0px",
     backgroundColor: themeBaseColor,
   };
-  console.log(themeBaseColor);
+
   return (
     <div
       className="element"
@@ -64,6 +64,7 @@ const ElementStandard = ({ id, total, element, userStyle, themeBaseColor }) => {
         <h2 className="element-heading">{element.name}</h2>
         <p className="element-desc"> {element.desc}</p>
       </div>
+      <div className="innerContainer" />
     </div>
   );
 };
