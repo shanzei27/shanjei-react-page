@@ -49,21 +49,8 @@ const elements = [
     circle_text: "2023",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum justo eu sagittis venenatis. Proin id leo nisl. Ut vitae libero ligula. Maecenas molestie vestibulum purus et porttitor. Ut ultricies purus turpis, non venenatis tellus convallis sed. Sed commodo nibh pellentesque neque sodales scelerisque. Nunc consectetur consequat erat in semper. Cras lacinia auctor nunc. Nullam fringilla non lectus vel tristique. Aliquam erat volutpat.",
   },
-  {
-    name: "test 6",
-    circle_text: "2024",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum justo eu sagittis venenatis. Proin id leo nisl. Ut vitae libero ligula. Maecenas molestie vestibulum purus et porttitor. Ut ultricies purus turpis, non venenatis tellus convallis sed. Sed commodo nibh pellentesque neque sodales scelerisque. Nunc consectetur consequat erat in semper. Cras lacinia auctor nunc. Nullam fringilla non lectus vel tristique. Aliquam erat volutpat.",
-  },
-  {
-    name: "test 6",
-    circle_text: "2024",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum justo eu sagittis venenatis. Proin id leo nisl. Ut vitae libero ligula. Maecenas molestie vestibulum purus et porttitor. Ut ultricies purus turpis, non venenatis tellus convallis sed. Sed commodo nibh pellentesque neque sodales scelerisque. Nunc consectetur consequat erat in semper. Cras lacinia auctor nunc. Nullam fringilla non lectus vel tristique. Aliquam erat volutpat.",
-  },  {
-    name: "test 6",
-    circle_text: "2024",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum justo eu sagittis venenatis. Proin id leo nisl. Ut vitae libero ligula. Maecenas molestie vestibulum purus et porttitor. Ut ultricies purus turpis, non venenatis tellus convallis sed. Sed commodo nibh pellentesque neque sodales scelerisque. Nunc consectetur consequat erat in semper. Cras lacinia auctor nunc. Nullam fringilla non lectus vel tristique. Aliquam erat volutpat.",
-  },
-  
+
+
 ];
 const elementStyle = {
   color: "pink",
@@ -95,7 +82,7 @@ const Home = () => {
           <Timeline
             variant="standard" //standard (colored blocks), gradient
             elements={elements}
-            elementWidth={200}
+            overallWidth={"100%"}
             customStyle={elementStyle}
             blockColors={[]}
             //  theme={{ primary: "#3f51b5", secondary: "#c50079" }}

@@ -1,9 +1,20 @@
 import "./timeline.css";
 import React, { useEffect, useState } from "react";
-import Element from "./components/Element";
+import ElementStandard from "./components/ElementStandard";
 import defaults from "./config/defaults";
 
-const Timeline = ({ elements, elementWidth, customStyle, blockColors }) => {
+//variant = if standard (with n number of sequential elements) or percentage (0-100% bar with elements relative to its assigned %), (default: standard)
+//elements = elements provided as array of objects (required)
+//elementWidth = width of the entire timeline (optional)
+//customStyle = custom stylint - targets individual elements inside the timeline, not the entire timeline (optional)
+//blockColors = colors for elements as array of hex code strings (optional)
+const Timeline = ({
+  variant,
+  elements,
+  overallWidth,
+  customStyle,
+  blockColors,
+}) => {
   const elLength = elements.length;
   const currentBlockColors =
     blockColors !== undefined && blockColors.length != 0
@@ -21,7 +32,7 @@ const Timeline = ({ elements, elementWidth, customStyle, blockColors }) => {
     let colorArr = [];
     let blockColorIndex = 0;
     while (colorArr.length < elLength) {
-      if (blockColorIndex < currentBlockColors.length-1) {
+      if (blockColorIndex < currentBlockColors.length - 1) {
         blockColorIndex += 1;
       } else {
         blockColorIndex = 0;
@@ -35,20 +46,22 @@ const Timeline = ({ elements, elementWidth, customStyle, blockColors }) => {
     <div
       className="main"
       style={{
-        width: elLength * (elementWidth !== undefined ? elementWidth : 240),
+        width: elLength * (overallWidth !== undefined ? overallWidth : 240),
       }}
     >
-      <div className="innerContainer">
-        {elements.map((el, index) => (
-          <Element
-            id={index}
-            total={elLength}
-            element={el}
-            userStyle={customStyle}
-            themeBaseColor={blockColorArr[index]}
-          />
-        ))}
-      </div>
+      {(variant === "standard" || variant === "") && (
+        <div className="innerContainer">
+          {elements.map((el, index) => (
+            <ElementStandard
+              id={index}
+              total={elLength}
+              element={el}
+              userStyle={customStyle}
+              themeBaseColor={blockColorArr[index]}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

@@ -1,13 +1,12 @@
-import { height } from "@fortawesome/free-brands-svg-icons/fa42Group";
 import "../timeline.css";
-import React, { useState } from "react";
+import React from "react";
 
 //id = id based on index,
 //total = total number of elements to render
 //element = current element data
 //userStyle = css overide from component init (user provided)
 //themeBaseColor = base hex color code for this element
-const Element = ({ id, total, element, userStyle, themeBaseColor }) => {
+const ElementStandard = ({ id, total, element, userStyle, themeBaseColor }) => {
   //const [themeBaseColor, setthemeBaseColor] = useState(themeBaseColor);
   const direction = id % 2 === 0 ? "up" : "down"; //direction = element pointing direction
   const elementBaseStyle = {
@@ -69,4 +68,4 @@ const Element = ({ id, total, element, userStyle, themeBaseColor }) => {
   );
 };
 
-export default Element;
+export default ElementStandard;
