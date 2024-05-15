@@ -10,11 +10,11 @@ const Timeline = ({ elements, elementWidth, customStyle, blockColors }) => {
       ? blockColors
       : defaults.defaultBlockColors;
 
-  const  [blockColorArr, setBlockColorArr] = useState([]);
+  const [blockColorArr, setBlockColorArr] = useState([]);
 
   useEffect(() => {
     init();
-  }, []);
+  }, [elLength]);
 
   const init = () => {
     //generate block colors for each element
